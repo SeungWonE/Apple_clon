@@ -1,0 +1,55 @@
+:root{
+	/* Color */
+	--white-color: #fff;
+	--black-color: #000000;
+	--grey-white-color: #e6e6e6;
+	--grey-color: #bfbfbf;
+	--grey-dark-color: #1a1a1a;
+	
+	/* Size */
+	--service-padding: 60px;
+	--icon-padding: 10px;
+	--icon-size: 164px;
+	--max-side-size: 1100px; /* 반응형 웹 맥스사이즈 */
+		
+	/* Font Size */
+	--font-large: 18px;
+	--font-medium: 14px;
+	--font-small: 12px;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Roboto;
+}
+
+/* Header */
+body header{
+	background-color: var(--grey-dark-color);
+	height: 50px;
+	
+	padding-left: 40px;
+	padding-right: 40px;
+	
+	display: flex;
+	flex-direction: row;
+	
+	justify-content: space-between;
+}
+body header .nav{
+	font-size: var(--font-small);
+	
+	padding: 0;
+	border: none;
+	background: none;
+	color: var(--grey-color);
+}
+body header .nav:hover{
+	filter: brightness(130%);
+	transition: all 0.5s;
+}
