@@ -9,14 +9,14 @@
 	--grey-dark-color: #2a2a2a;
 	
 	/* Size */
-	--service-padding: 60px;
+	--service-margin: 50px;
 	--icon-padding: 10px;
 	--icon-size: 164px;
 	--max-side-size: 1100px; /* 반응형 웹 맥스사이즈 */
 		
 	/* Font Size */
 	--font-large: 38px;
-	--font-medium: 20px;
+	--font-medium: 18px;
 	--font-small: 12px;
 }
 
@@ -72,8 +72,7 @@ main #OnlyApple{
 	text-align: center;
 	line-height: 70px;
 	
-	padding-top: 60px;
-	padding-bottom: 60px;
+	margin-top: var(--service-margin);
 }
 main #OnlyApple #title2{
 	padding-bottom: 20px;
@@ -86,14 +85,75 @@ main #OnlyApple .text{
 
 main .services{
 	width: 100%;
-	height: 500px;
+	height: 550px;
 	overflow: hidden;
   	position: relative;
+	
+	margin-top: var(--service-margin);
 }
 main .services .Show{
     position: absolute;
     width: 80%;
-	top: 60%;
+	top: 50%;
 	left: 10%;
+	color: var(--white-color);
+	font-size: var(--font-medium);
+}
+main .services .Show .Logo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+main .services .Show .Logo img{
+	width: 35px;
+}
+main .services .Show .Logo .Title{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+main .services .Show .Logo .onOne{
+	font-size: var(--font-small);
+	
+	height: 20px;	
+	width: 100px;
+	border: solid white 1px;
+	border-radius: 30px;
+	
+	text-align: center;
+}
+main .services .Show .Info{
+	font-size: 25px;
+	font-weight: bold;
+	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+}
+main .services .Show .Selection button{
+	background: none;
+	border: solid white 1px;
+	border-radius: 20px;
+	
+	font-size: 14px;
+	color: var(--white-color);
+	font-weight: bold;
+	
+	padding: 8px;
+	margin-top: 10px;
+}
+main .services .Show .Selection button:hover{
+	filter: brightness(130%);
+	transition: all 0.5s;
+}
+main .services .Show .Selection .free{
+	background: var(--white-color);
+	color: black;
+}
+main .services .Show .Selection .more{
+	margin-left: 10px;
+}
+main .services .Show .Selection .phase{
+	width: 35px;
+	margin-left: 60%;
 }
 
