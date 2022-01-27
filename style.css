@@ -60,7 +60,7 @@ body header .nav:hover{
 main{
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: left;
 }
 main #OnlyApple{
 	display: flex;
@@ -85,19 +85,30 @@ main #OnlyApple .text{
 
 main .services{
 	width: 100%;
-	height: 550px;
-	overflow: hidden;
-  	position: relative;
-	
+		
 	margin-top: var(--service-margin);
 }
-main .services .Show{
-    position: absolute;
-    width: 80%;
-	top: 50%;
-	left: 10%;
-	color: var(--white-color);
+main .OnVideo{
+	overflow: hidden;
+	
+  	position: relative;
+}
+main .services .bg_vid{
+	height: 550px;
+}
+main .services .Show{ /* Show 같은 경우 밑에도 같은구조가 있기때문에 여기에 속성을 추가해 postion: absolute가 적용돤 버전은 분리할 것 */
+	color: var(--black-color);
 	font-size: var(--font-medium);
+	
+	margin-left: 10%
+}
+main .OnVideo .Show{
+	position: absolute;
+    width: 80%;
+	top: 38%;
+	
+	--white-color: black; /* reverse color for text on video */
+	--black-color: white;
 }
 main .services .Show .Logo{
 	display: flex;
@@ -113,11 +124,12 @@ main .services .Show .Logo .Title{
 }
 main .services .Show .Logo .onOne{
 	font-size: var(--font-small);
-	
+
 	height: 20px;	
 	width: 100px;
-	border: solid white 1px;
+	border: solid var(--black-color) 1px;
 	border-radius: 30px;
+	
 	
 	text-align: center;
 }
@@ -129,13 +141,17 @@ main .services .Show .Info{
 	padding-bottom: 10px;
 	
 }
+main .services .Show .Selection{
+	display: flex;
+	flex-direction: row;
+}
 main .services .Show .Selection button{
 	background: none;
 	border: solid white 1px;
 	border-radius: 20px;
 	
 	font-size: 14px;
-	color: var(--white-color);
+	color: var(--black-color);
 	font-weight: bold;
 	
 	padding: 8px;
@@ -146,14 +162,56 @@ main .services .Show .Selection button:hover{
 	transition: all 0.5s;
 }
 main .services .Show .Selection .free{
-	background: var(--white-color);
-	color: black;
+	background: var(--black-color);
+	color: var(--white-color);
 }
 main .services .Show .Selection .more{
 	margin-left: 10px;
+}
+main .services .Show .Selection .morelink{
+	margin-left: 10px;
+	font-size: 14px;
+	
+
 }
 main .services .Show .Selection .phase{
 	width: 35px;
 	margin-left: 60%;
 }
+main .services .Show .VideoInfo{
+	font-size: var(--font-medium);
+	color: var(--grey-color);
+	
+	padding: 6px;
+}
+
+main .services .ShowCase .container{
+	line-height: 14px;
+	
+	display: flex;
+	flex-direction: column;
+	
+	margin: 10px;
+}
+main .services .ShowCase .container img{
+	width: 300px;
+	
+	border-radius: 7px;
+}
+main #music .ShowCase .container img{
+	width: 160px;
+}
+main .services .ShowCase .container .title{
+	font-size: var(--font-small);
+	color: var(--grey-dark-color);
+	
+	padding-top: 8px;
+}
+main .services .ShowCase .container .subtitle{
+	font-size: var(--font-small);
+	color: var(--grey-color);
+
+	padding-bottom: 8px;
+}
+
 
