@@ -4,7 +4,7 @@
 	/* Color */
 	--white-color: #fff;
 	--black-color: #000000;
-	--grey-white-color: #e6e6e6;
+	--grey-white-color: #f6f6f6;
 	--grey-color: #a0a0a0;
 	--grey-dark-color: #2a2a2a;
 	
@@ -96,15 +96,16 @@ main .OnVideo{
 main .services .bg_vid{
 	height: 550px;
 }
-main .services .Show{ /* Show 같은 경우 밑에도 같은구조가 있기때문에 여기에 속성을 추가해 postion: absolute가 적용돤 버전은 분리할 것 */
+main .services .Show{ 
 	color: var(--black-color);
 	font-size: var(--font-medium);
+	
+	width: 80%;
 	
 	margin-left: 10%
 }
 main .OnVideo .Show{
 	position: absolute;
-    width: 80%;
 	top: 38%;
 	
 	--white-color: black; /* reverse color for text on video */
@@ -144,13 +145,16 @@ main .services .Show .Info{
 main .services .Show .Selection{
 	display: flex;
 	flex-direction: row;
+	
+	font-size: 14px;
+	
+	align-items: center;
 }
 main .services .Show .Selection button{
 	background: none;
-	border: solid white 1px;
+	border: solid var(--black-color) 1px;
 	border-radius: 20px;
 	
-	font-size: 14px;
 	color: var(--black-color);
 	font-weight: bold;
 	
@@ -161,22 +165,29 @@ main .services .Show .Selection button:hover{
 	filter: brightness(130%);
 	transition: all 0.5s;
 }
-main .services .Show .Selection .free{
+main .services .Show .Selection .button{
 	background: var(--black-color);
 	color: var(--white-color);
 }
 main .services .Show .Selection .more{
 	margin-left: 10px;
+	border: none;
+}
+main .OnVideo .Show .Selection .more{
+	border: solid var(--black-color) 1px;
 }
 main .services .Show .Selection .morelink{
 	margin-left: 10px;
 	font-size: 14px;
-	
-
+}
+main .services .Show .Selection .margin{
+	flex: 1;
 }
 main .services .Show .Selection .phase{
-	width: 35px;
-	margin-left: 60%;
+	font-size: 8px;
+	
+	height: 27px;
+	width: 27px;
 }
 main .services .Show .VideoInfo{
 	font-size: var(--font-medium);
@@ -214,4 +225,28 @@ main .services .ShowCase .container .subtitle{
 	padding-bottom: 8px;
 }
 
+main #one{
+	background-color: var(--grey-white-color);
+	
+	padding: 20px;
+}
+main #one .Show{
+	width: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	
+	align-items: center;
+	text-align: center;
+	font-weight: bold;
+}
+main #one *{
+	margin: 10px;
+}
+main #one #icons{
+	padding-left: 20px;
+}
+main #one .Show .Selection{
+	margin: 0;
+}
 
