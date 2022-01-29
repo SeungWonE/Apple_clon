@@ -313,3 +313,80 @@ main #Wallet #Show #Info #WalletInfo{
 main #Wallet #Show #Info #more{
 	font-size: 13px;
 }
+
+/* footer */
+footer{
+	background-color: var(--grey-white-color);
+	
+	font-size: var(--font-small);
+	color: var(--grey-color);
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	margin-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+footer #rule{
+	padding: 20px;
+}
+footer #rule ul{
+	list-style: none;
+}
+footer #rule ul li{
+	padding-bottom: 10px;
+}
+footer hr{
+	color: var(--grey-color);
+	width: calc(100% - 40px);
+}
+footer #support{
+	width: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	
+	padding: 20px;
+}
+footer #support #loot{
+	display: flex;
+	flex-direction: row;
+	
+	padding-bottom: 20px;
+}
+footer #support #loot img{
+	width: 15px;
+	filter:brightness(60%);
+}
+footer #support #loot div{
+	font-size: 15px;;
+	color: var(--grey-color);
+	
+	padding-left: 10px;
+}
+footer #support #container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+footer #support #container .columns .contents{
+	padding-bottom: 10px;
+}
+footer #support #container .columns .contents li{
+	padding-bottom: 8px;
+}
+footer #support #container .columns .contents .index{
+	padding-bottom: 8px;
+	color: var(--grey-dark-color);
+}
+footer #copyright{
+	width: 100%;
+}
+footer #copyright div{
+	padding: 8px;
+}
+footer #copyright hr{
+	width: 100%;
+}
