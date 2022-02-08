@@ -1,28 +1,43 @@
-function fadeIn(target) {
+function fadeIn(target, direction) {
 	var level = 0;
 	var timer = null;
+
+	target.style.position = 'relative';
 	
-	timer = setInterval( function(){level = fadeInAction(target, level, timer);}, 10); //setInterval 주기적으로 반복해주는 함수
+	timer = setInterval( function(){level = fadeInAction(target, level, timer, direction);}, 10); //setInterval 주기적으로 반복해주는 함수
 }
 
-function fadeInAction(target, level, timer){
+function fadeInAction(target, level, timer, direction){
 	level = level + 0.01;
-	
-	changeOpacity(target, level);
+
+
+	changeOpacity(target, level, direction);
 	
 	if(level>1) clearInterval(timer);
 	
 	return level;
 }
 
-function changeOpacity(target, level) {
+function changeOpacity(target, level, direction) {
 	var obj = target;
 	obj.style.opacity = level;
+	
+	if(direction == 'up'){
+		obj.style.top = Math.cos(level) * 10 + 'px';
+	}
+
 }
 
+//fadeIn animation
 var targetElemet = document.getElementById('title1');
-fadeIn(targetElemet);
+fadeIn(targetElemet, 'up');
 
 targetElemet = document.getElementById('title2');
+setTimeout(fadeIn, 1000, targetElemet, 'up');
 
-fadeIn(targetElemet);
+targetElemet = document.getElementsByClassName('text')[0];
+setTimeout(fadeIn, 2000, targetElemet, 'up');
+
+targetElemet = document.getElementById('TV');
+setTimeout(fadeIn, 2000, targetElemet, 'center');
+

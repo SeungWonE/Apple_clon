@@ -74,15 +74,24 @@ main #OnlyApple{
 	
 	margin-top: var(--service-margin);
 }
+main #OnlyApple #title1{
+	opacity: 0%;
+}
 main #OnlyApple #title2{
 	padding-bottom: 20px;
+	opacity: 0%;
 }
 main #OnlyApple .text{
 	font-size: var(--font-medium);
 	color: var(--grey-color);
 	line-height: 25px;
+	
+	opacity: 0%;
 }
 
+main #TV{
+	opacity: 0%;
+}
 main .services{
 	width: 100%;
 		
