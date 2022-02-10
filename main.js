@@ -1,3 +1,4 @@
+//fadeIn func
 function fadeIn(target, direction) {
 	var level = 0;
 	var timer = null;
@@ -26,6 +27,15 @@ function changeOpacity(target, level, direction) {
 		obj.style.top = Math.cos(level) * 10 + 'px';
 	}
 
+}
+
+//vid pause
+var backgroundVid = document.getElementsByClassName('bg_vid')
+var pauseButton = document.getElementsByClassName('phase')
+
+for (var i = 0; i < pauseButton.length;){
+	console.log(i);
+	pauseButton[i].addEventListener("click", function(){backgroundVid[i].pause();});
 }
 
 //fadeIn animation
