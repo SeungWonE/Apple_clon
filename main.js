@@ -29,14 +29,6 @@ function changeOpacity(target, level, direction) {
 
 }
 
-//vid pause
-var backgroundVid = document.getElementsByClassName('bg_vid')
-var pauseButton = document.getElementsByClassName('phase')
-
-for (var i = 0; i < pauseButton.length;){
-	console.log(i);
-	pauseButton[i].addEventListener("click", function(){backgroundVid[i].pause();});
-}
 
 //fadeIn animation
 var targetElemet = document.getElementById('title1');
