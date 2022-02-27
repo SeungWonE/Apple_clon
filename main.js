@@ -29,14 +29,30 @@ function changeOpacity(target, level, direction) {
 
 }
 
-//vid pause
-var backgroundVid = document.getElementsByClassName('bg_vid')
-var pauseButton = document.getElementsByClassName('phase')
 
-for (var i = 0; i < pauseButton.length;){
-	console.log(i);
-	pauseButton[i].addEventListener("click", function(){backgroundVid[i].pause();});
+//video pause
+var pauseButtonClickHandler = function(arg){
+	
+	var returtEventHandler = function(){
+		if (pauseButton[arg].innerText == '||'){
+			pauseButton[arg].innerText = '▶︎';
+			bgVideo[arg].pause();
+		} else {
+			pauseButton[arg].innerText = '||';
+			bgVideo[arg].play();
+		}
+	};
+	
+	return returtEventHandler;
 }
+//js는 변수가 block scope가 아닌 life time 방식을 활용
+//따라서 onclick 이벤트의 안쪽 함수는 마지막 수 값을 봄 -> Handler을 활용해 arg라는 별개의 변수로 수용
+var pauseButton = document.getElementsByClassName('pause');
+var bgVideo = document.getElementsByClassName('bg_vid');
+
+for (var i=0; i<pauseButton.length; i++){
+	pauseButton[i].onclick = pauseButtonClickHandler(i);
+};
 
 //fadeIn animation
 var targetElemet = document.getElementById('title1');
