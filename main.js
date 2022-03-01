@@ -45,7 +45,7 @@ var pauseButtonClickHandler = function(arg){
 	
 	return returtEventHandler;
 }
-//js는 변수가 block scope가 아닌 life time 방식을 활용함
+//js는 변수가 block scope가 아닌 life time 방식을 활용
 //따라서 onclick 이벤트의 안쪽 함수는 마지막 수 값을 봄 -> Handler을 활용해 arg라는 별개의 변수로 수용
 var pauseButton = document.getElementsByClassName('pause');
 var bgVideo = document.getElementsByClassName('bg_vid');
