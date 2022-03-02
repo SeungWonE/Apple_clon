@@ -9,7 +9,7 @@
 	--grey-dark-color: #2a2a2a;
 	
 	/* Size */
-	--service-margin: 50px;
+	--service-margin: 150px;
 	--icon-padding: 10px;
 	--icon-size: 164px;
 	--max-side-size: 1100px; /* 반응형 웹 맥스사이즈 */
@@ -203,11 +203,19 @@ main .services .Show .VideoInfo{
 	padding: 6px;
 }
 
+main .services .ShowCase{
+	display: flex;
+	flex-direction: row;
+}
 main .services .ShowCase .container{
 	line-height: 14px;
 	
 	display: flex;
 	flex-direction: column;
+	
+	position: relative;
+	
+	left: 0;
 	
 	margin: 10px;
 }

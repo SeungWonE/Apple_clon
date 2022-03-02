@@ -1,4 +1,4 @@
-//fadeIn func
+//fadeIn animation
 function fadeIn(target, direction) {
 	var level = 0;
 	var timer = null;
@@ -29,6 +29,17 @@ function changeOpacity(target, level, direction) {
 
 }
 
+var targetElemet = document.getElementById('title1');
+fadeIn(targetElemet, 'up');
+
+targetElemet = document.getElementById('title2');
+setTimeout(fadeIn, 1000, targetElemet, 'up');
+
+targetElemet = document.getElementsByClassName('text')[0];
+setTimeout(fadeIn, 2000, targetElemet, 'up');
+
+targetElemet = document.getElementById('TV');
+setTimeout(fadeIn, 2000, targetElemet, 'center');
 
 //video pause
 var pauseButtonClickHandler = function(arg){
@@ -37,6 +48,7 @@ var pauseButtonClickHandler = function(arg){
 		if (pauseButton[arg].innerText == '||'){
 			pauseButton[arg].innerText = '▶︎';
 			bgVideo[arg].pause();
+			clearInterval(floatId); //일시정지시 흘러가는거 멈춤
 		} else {
 			pauseButton[arg].innerText = '||';
 			bgVideo[arg].play();
@@ -55,16 +67,26 @@ for (var i=0; i<pauseButton.length; i++){
 };
 
 
-//fadeIn animation
-var targetElemet = document.getElementById('title1');
-fadeIn(targetElemet, 'up');
 
-targetElemet = document.getElementById('title2');
-setTimeout(fadeIn, 1000, targetElemet, 'up');
+//showcase float animation
+var ShowcaseFloat = function(){
+	var tv1 = document.getElementById('tv1');
+	var level = 0;
+	
+	floatId = setInterval( function(){level = ShowcaseLeft(tv1, level);}, 100);
+};
 
-targetElemet = document.getElementsByClassName('text')[0];
-setTimeout(fadeIn, 2000, targetElemet, 'up');
+var ShowcaseLeft = function(target, level){
+	level = level + 0.1;
+	
+	target.style.left = level + '%';
+	
+	return level
+};
 
-targetElemet = document.getElementById('TV');
-setTimeout(fadeIn, 2000, targetElemet, 'center');
+var floatId = null;
+
+ShowcaseFloat(); //함수 1차 완성
+//showcase hover slow
+
 
