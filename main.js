@@ -69,16 +69,20 @@ for (var i=0; i<pauseButton.length; i++){
 
 
 //showcase float animation
-var ShowcaseFloat = function(){
-	var tv1 = document.getElementById('tv1');
+var ShowcaseFloat = function(targetID, targetIndex){
+	var target = document.getElementById(targetID);
 	var level = 0;
 	
-	floatId = setInterval( function(){level = ShowcaseLeft(tv1, level);}, 100);
+	floatId = setInterval( function(){level = ShowcaseLeft(target, targetIndex, level);}, 10);
 };
 
-var ShowcaseLeft = function(target, level){
+var ShowcaseLeft = function(target, targetIndex, level){
 	level = level + 0.1;
-	
+
+	if(level >= 100 - ((targetIndex-1)*20)){
+		level = -10 - ((targetIndex-1)*40);
+	}
+
 	target.style.left = level + '%';
 	
 	return level
@@ -86,7 +90,6 @@ var ShowcaseLeft = function(target, level){
 
 var floatId = null;
 
-ShowcaseFloat(); //함수 1차 완성
-//showcase hover slow
-
-
+for(var i = 0; i < 5; i++){
+ShowcaseFloat('tv'+i, i); //함수 1차 완성
+}
