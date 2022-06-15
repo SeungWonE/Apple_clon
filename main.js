@@ -48,7 +48,6 @@ var pauseButtonClickHandler = function(arg){
 		if (pauseButton[arg].innerText == '||'){
 			pauseButton[arg].innerText = '▶︎';
 			bgVideo[arg].pause();
-			clearInterval(floatId); //일시정지시 흘러가는거 멈춤
 		} else {
 			pauseButton[arg].innerText = '||';
 			bgVideo[arg].play();
@@ -69,21 +68,21 @@ for (var i=0; i<pauseButton.length; i++){
 
 
 //showcase float animation
-var ShowcaseFloat = function(targetID, targetIndex){
+var ShowcaseFloat = function(targetID, targetIndex, showcaseWidth, floatSpeed){
 	var target = document.getElementById(targetID);
 	var level = 0;
 	
-	floatId = setInterval( function(){level = ShowcaseLeft(target, targetIndex, level);}, 10);
+	floatId = setInterval( function(){level = ShowcaseLeft(target, targetIndex, showcaseWidth,  level);}, floatSpeed);
 };
 
-var ShowcaseLeft = function(target, targetIndex, level){
-	level = level + 0.1;
+var ShowcaseLeft = function(target, targetIndex, showcaseWidth, level){
+	level = level + 1;
 
-	if(level >= 100 - ((targetIndex-1)*20)){
-		level = -10 - ((targetIndex-1)*40);
+	if(level >= 1174 + showcaseWidth - (showcaseWidth * targetIndex)){
+		level = -showcaseWidth * targetIndex;
 	}
 
-	target.style.left = level + '%';
+	target.style.left = level + 'px';
 	
 	return level
 };
@@ -91,5 +90,14 @@ var ShowcaseLeft = function(target, targetIndex, level){
 var floatId = null;
 
 for(var i = 0; i < 5; i++){
-ShowcaseFloat('tv'+i, i); //함수 1차 완성
+ShowcaseFloat('tv'+i, i, 320, 10);
 }
+
+for(var i = 0; i < 7; i++){
+ShowcaseFloat('music'+i, i, 180, 10);
+}
+
+for(var i = 0; i < 5; i++){
+ShowcaseFloat('game'+i, i, 320, 10);
+}
+	
